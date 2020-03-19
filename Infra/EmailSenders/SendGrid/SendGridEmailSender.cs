@@ -24,7 +24,7 @@ namespace Jobby.Notifier.Infra.EmailSenders.SendGridES
             Options = optionsAccessor.Value;
         }
 
-        public async Task<SendEmailResult> SendAsync(EmailDetails details)
+        public async Task<SendEmailResult> SendAsync(SendEmailDetails details)
         {
             Response response = await SendAsync(Options.Key, details);
             if (response.StatusCode == System.Net.HttpStatusCode.Accepted)
@@ -59,7 +59,7 @@ namespace Jobby.Notifier.Infra.EmailSenders.SendGridES
             }
         }
 
-        private async Task<Response> SendAsync(string apiKey, EmailDetails details)
+        private async Task<Response> SendAsync(string apiKey, SendEmailDetails details)
         {
             var client = new SendGridClient(apiKey);
             var msg = new SendGridMessage

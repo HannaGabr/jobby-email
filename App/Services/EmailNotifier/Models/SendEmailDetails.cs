@@ -1,6 +1,6 @@
 ﻿namespace Jobby.Notifier.Services.EmailNotifier.Models
 {
-    public class EmailDetails
+    public class SendEmailDetails
     {
         public string FromEmail { get; set; }
         public string ToEmail { get; set; }

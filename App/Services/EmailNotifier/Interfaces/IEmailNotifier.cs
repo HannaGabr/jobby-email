@@ -3,8 +3,8 @@ using System.Threading.Tasks;
 
 namespace Jobby.Notifier.Services.EmailNotifier.Interfaces
 {
-    public interface IEmailSender
+    public interface IEmailNotifier
     {
-        Task<SendEmailResult> SendAsync(SendEmailDetails emailDetails);
+        Task<NotifyByEmailResult> NotifyAsync(NotifyByEmailDetails notifyDetails);
     }
 }
